@@ -40,6 +40,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
+        
 
         $category->update($request->all());
         return redirect()->route('admin.category.index')->with('success', 'Category updated successfully.');
